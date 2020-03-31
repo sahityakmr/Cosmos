@@ -38,7 +38,6 @@ public class BaseView extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         Background background = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.forest));
-
         dispatchers.add(background);
         BaseThread baseThread = new BaseThread(getHolder(), this);
         baseThread.setRunning(true);
@@ -65,5 +64,7 @@ public class BaseView extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas) {
         Log.d(TAG, "draw: ");
         super.draw(canvas);
+        for(ViewDispatcher dispatcher : dispatchers)
+            dispatcher.draw(canvas);
     }
 }

@@ -1,5 +1,6 @@
 package com.sahitya.cosmos;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
